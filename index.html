@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Campus Emergency Alert System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#141e30,#243b55);
+color:white;
+overflow:hidden;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+width:420px;
+padding:45px;
+border-radius:20px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+box-shadow:0 8px 32px rgba(0,0,0,0.2);
+text-align:center;
+color:white;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+.logo{
+font-size:70px;
+margin-bottom:10px;
+animation:float 2s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0px);}
+}
+
+h1{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.subtitle{
+font-size:15px;
+margin-bottom:35px;
+opacity:0.9;
+}
+
+.btn{
+display:block;
+width:100%;
+padding:15px;
+margin:15px 0;
+border:none;
+border-radius:12px;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+color:white;
+}
+
+.high{
+background:linear-gradient(45deg,#ff416c,#ff4b2b);
+}
+
+.medium{
+background:linear-gradient(45deg,#f7971e,#ffd200);
+}
+
+.low{
+background:linear-gradient(45deg,#56ab2f,#a8e063);
+}
+
+.btn:hover{
+transform:translateY(-3px) scale(1.03);
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+.footer{
+margin-top:25px;
+font-size:13px;
+opacity:0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">🚨</div>
+
+<h1>Campus Emergency Alert System</h1>
+
+<p class="subtitle">
+Anurag University Campus Safety Portal
+</p>
+
+<button class="btn high" onclick="goToLocation('HIGH')">
+ HIGH ALERT
+</button>
+
+<button class="btn medium" onclick="goToLocation('MEDIUM')">
+ MEDIUM ALERT
+</button>
+
+<button class="btn low" onclick="goToLocation('LOW')">
+LOW ALERT
+</button>
+
+<div class="footer">
+24×7 Emergency Monitoring System
+</div>
+
+</div>
+
+<script>
+
+function goToLocation(severity){
+
+localStorage.setItem("severity", severity);
+
+window.location.href="location.html";
+
+}
+
+</script>
+
+</body>
+</html>

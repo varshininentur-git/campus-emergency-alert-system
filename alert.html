@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Alert Sent</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#141e30,#243b55);
+color:white;
+overflow:hidden;
+}
+
+.card{
+width:450px;
+padding:45px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+text-align:center;
+box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+
+.icon{
+font-size:80px;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
+
+h1{
+margin:20px 0;
+}
+
+.info{
+font-size:18px;
+margin:15px 0;
+}
+
+.highlight{
+color:#00ffcc;
+font-weight:bold;
+}
+
+.success{
+margin-top:20px;
+color:#90ee90;
+font-size:15px;
+}
+
+button{
+margin-top:30px;
+padding:14px 28px;
+border:none;
+border-radius:10px;
+background:linear-gradient(45deg,#2193b0,#6dd5ed);
+color:white;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="icon">🚨</div>
+
+<h1>Emergency Alert Broadcasted</h1>
+
+<div class="info">
+Severity:
+<span class="highlight" id="severity"></span>
+</div>
+
+<div class="info">
+Location:
+<span class="highlight" id="location"></span>
+</div>
+
+<div class="success">
+✔ Campus authorities have been notified successfully.
+</div>
+
+<button onclick="goHome()">
+🏠 HOME
+</button>
+
+</div>
+
+<script>
+
+document.getElementById("severity").innerHTML=
+localStorage.getItem("severity");
+
+document.getElementById("location").innerHTML=
+localStorage.getItem("location");
+
+function goHome(){
+
+window.location.href="index.html";
+
+}
+
+</script>
+
+</body>
+</html>
