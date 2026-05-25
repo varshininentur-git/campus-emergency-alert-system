@@ -36,7 +36,7 @@ JavaScript
 
 
 # 🚀 How to Run the Project
-## Method 1 — VS Code Live Server
+## VS Code Live Server
 
 1. Open project folder in VS Code
 2. Install Live Server extension
